@@ -1,0 +1,24 @@
+---
+title: "Interactive Plot with Plotly"
+author: "Aaron Abraham Mathews"
+date: "`13-01-2025`"
+output: 
+  html_document:
+    self_contained: false
+---
+
+## Interactive Plot: Sepal Length vs. Petal Length
+
+This is an interactive Plotly plot using the `iris` dataset. It shows the relationship between Sepal Length and Petal Length for different species.
+
+```{r plotly-iris, echo=FALSE}
+library(plotly)
+
+# Create the plot using plot_ly
+p <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, color = ~Species, type = 'scatter', mode = 'markers') %>%
+  layout(title = "Sepal Length vs. Petal Length",
+         xaxis = list(title = "Sepal Length (cm)"),
+         yaxis = list(title = "Petal Length (cm)"))
+
+# Show the plot
+p
